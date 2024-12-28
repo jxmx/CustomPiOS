@@ -82,6 +82,9 @@ if [ "$NETWORK_DISABLE_PWRSAVE" == "yes" ]; then
   # Use rc.local
   if [ "$NETWORK_PWRSAVE_TYPE" == "rclocal" ]; then
     echo_green "Modifying /etc/rc.local ..."
+	if [ ! -f "/etc/rc.local" ]; then
+      echo '#!/bin/sh -e' > /etc/rc.local
+    fi
     sed -i 's@exit 0@@' /etc/rc.local
     (echo "# Disable WiFi Power Management"; \
     echo 'echo "Disabling power management for wlan0 ..."' ; \
