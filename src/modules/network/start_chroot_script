@@ -61,8 +61,8 @@ if [ "${BASE_DISTRO}" == "raspbian" ]; then
 fi
 
 if [ "$NETWORK_ENABLE_NTP_QUIRKS" == "yes" ]; then
-	if [ ! -f "/etc/rc.local" ];then
-	  echo 'exit 0' >> /etc/rc.local
+	if [ ! -f "/etc/rc.local" ]; then
+	  echo '#!/bin/sh -e' > /etc/rc.local
 	fi
 	
 	# prevent ntp updates from failing due to some Rpi3 weirdness, see also "Fix SSH" further below
