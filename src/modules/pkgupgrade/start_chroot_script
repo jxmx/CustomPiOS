@@ -23,7 +23,7 @@ apt-get update --allow-releaseinfo-change
 ### Pre Update Section
 if [ "${PKGUPGRADE_DISTUPGRADE}" = "y" ]; then
   echo_green "Performing 'apt-get ${PKGUPGRADE_DISTUPGRADE_METHOD}' ... "
-  apt-get ${PKGUPGRADE_DISTUPGRADE_METHOD} -y
+  apt-get -o Dpkg::Options::="--force-confnew" ${PKGUPGRADE_DISTUPGRADE_METHOD} -y
 else
   echo_green "Skipping Dist Upgrade ['apt-get ${PKGUPGRADE_DISTUPGRADE_METHOD}']."
 fi
