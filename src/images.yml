@@ -1,4 +1,11 @@
 images:
+    asl:
+      description: "ASL Appliance Base"
+      type: http
+      url: "https://downloads.raspberrypi.com/raspios_oldstable_lite_arm64/images/raspios_oldstable_lite_arm64-2025-10-02/2025-10-01-raspios-bookworm-arm64-lite.img.xz"
+      checksum: "https://downloads.raspberrypi.com/raspios_oldstable_lite_arm64/images/raspios_oldstable_lite_arm64-2025-10-02/2025-10-01-raspios-bookworm-arm64-lite.img.xz.sha256"
+      env:
+        BASE_ARCH: arm64
     raspberrypiarmhf:
       description: "Official raspberrypi lite 32bit image"
       type: rpi
